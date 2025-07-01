@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bookmarker</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=PT+Sans+Caption:wght@400;700&family=Pacifico&family=Righteous&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+</head>
+<body>
+
+
+<div class="container d-flex justify-content-center flex-column ">
+    
+    <div class="header text-center mt-5">
+        <h1>
+            Bookmarker
+        </h1>
+
+    </div>
+    <div class="bbody d-flex justify-content-center align-items-center flex-column md-5">
+        <h2 class="text-center">
+            <i class="fa-solid fa-bookmark"></i> Bookmark your favorite sites <i class="fa-solid fa-bookmark"></i>
+        </h2>
+        <div class=" url-text d-flex flex-column w-100">
+        <label for="weburl"><i class="fa-solid fa-link"></i> Site URL</label>
+        <input oninput="validationUrl()" class="form1 form-control" type="text" id="weburl" placeholder="Website URL">
+        </div>
+        <div class=" name-text d-flex flex-column w-100">
+        <label for="Bookmarkername"><i class="fa-solid fa-book-bookmark"></i> Site Name</label>
+        <input oninput="validationName()" class="form1 form-control" type="text" id="Bookmarkername" placeholder="Bookmarker Name">
+        </div>
+
+        <button class="btn-s" onclick="addWeb()">Submit</button>
+    </div>
+        <table  class=" text-center table mt-4">
+        <thead>
+        <tr>
+        <th>index</th>
+        <th>Website Name</th>
+        <th>Visit</th>
+        <th>Delete</th>
+        </tr>
+        </thead>
+        <tbody id="table">
+
+        </tr>
+        </tbody>
+
+        </table>
+
+<div id="validMes" class="valid position-fixed top-0 start-0 w-100 h-100 d-flex justify-content-center align-items-center bg-dark bg-opacity-50 z-3 d-none">
+  <div class="validbox bg-white shadow rounded p-4 text-center position-relative">
+    
+    <i class="fa-solid fa-xmark text-black position-absolute top-0 end-0 m-3 crsr-ptr" onclick="closeValidationMessage()"></i>
+    
+    <div class="mb-3">
+    <i class="fa-solid fa-circle-xmark text-danger display-4"></i>
+    </div>
+    
+    <h3 class="text-danger mb-2">Site Name or URL is not valid</h3>
+    <ul class="t-left text-start ps-4">
+    <li>
+        <i class="fa-solid fa-circle danger me-2"></i>
+        Site name must contain at least 3 characters
+    </li>
+    <li>
+        <i class="fa-solid fa-circle danger me-2"></i>
+        Site URL must be a valid one
+    </li>   
+    </ul>
+
+  </div>
+</div>
+
+
+    <script src="js/bootstrap.bundle.min.js"></script>
+    <script src="js/main.js"></script>
+
+</body>
+</html>
